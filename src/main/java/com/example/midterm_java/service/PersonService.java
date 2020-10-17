@@ -12,8 +12,8 @@ import java.util.List;
 public class PersonService {
 
    private final PersonDao personDao;
-   @Autowired
 
+   @Autowired
    public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
         this.personDao = personDao;
    }
