@@ -2,12 +2,8 @@ package com.example.midterm_java.api;
 
 import com.example.midterm_java.model.Cocomo;
 import com.example.midterm_java.model.CostDriver;
-import com.example.midterm_java.model.Person;
 import com.example.midterm_java.service.CocomoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
