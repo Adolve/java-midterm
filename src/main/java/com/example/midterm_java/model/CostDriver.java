@@ -12,6 +12,8 @@ import javax.validation.constraints.Pattern;
 public class CostDriver {
 
 
+    @Min(value = 2, message = "size value must be >= 2")
+    private int size;
 
     @OneOf(value = {0.75,0.88,1.00,1.15,1.40}, message = "requiredSoftwareReliability must be : 0.75, 0.88, 1.00, 1.15, 1.40")
     private double requiredSoftwareReliability;
@@ -25,8 +27,8 @@ public class CostDriver {
     @OneOf(value = {1.00, 1.11, 1.30}, message = "runtimePerformanceConstraints must be : 1.00, 1.11, 1.30")
     private double runtimePerformanceConstraints;
 
-    @OneOf(value = {1.00, 1.06, 1.21}, message = "remoryConstraints must be : 1.00, 1.06, 1.21")
-    private double remoryConstraints;
+    @OneOf(value = {1.00, 1.06, 1.21}, message = "memoryConstraints must be : 1.00, 1.06, 1.21")
+    private double memoryConstraints;
 
     @OneOf(value = {0.87, 1.00, 1.15, 1.30}, message = "volatilityOfTheVirtualMachineEnvironment must be : 0.87, 1.00, 1.15, 1.30")
     private double volatilityOfTheVirtualMachineEnvironment;
@@ -58,11 +60,12 @@ public class CostDriver {
     @OneOf(value = {1.23,1.08,1.00,1.04,1.10}, message = "requiredDevelopmentSchedule must be : 1.23, 1.08, 1.00, 1.04, 1.10")
     private double requiredDevelopmentSchedule;
 
-    public CostDriver(@JsonProperty("requiredSoftwareReliability") double requiredSoftwareReliability,
+    public CostDriver(@JsonProperty("size") int size,
+                      @JsonProperty("requiredSoftwareReliability") double requiredSoftwareReliability,
                       @JsonProperty("sizeofApplicationDatabase") double sizeofApplicationDatabase,
                       @JsonProperty("complexityofTheProduct") double complexityofTheProduct,
                       @JsonProperty("runtimePerformanceConstraints") double runtimePerformanceConstraints,
-                      @JsonProperty("remoryConstraints") double remoryConstraints,
+                      @JsonProperty("memoryConstraints") double memoryConstraints,
                       @JsonProperty("volatilityOfTheVirtualMachineEnvironment") double volatilityOfTheVirtualMachineEnvironment,
                       @JsonProperty("requiredTurnaboutTime") double requiredTurnaboutTime,
                       @JsonProperty("analystCapability") double analystCapability,
@@ -73,11 +76,12 @@ public class CostDriver {
                       @JsonProperty("applicationOfSoftwareEngineeringMethods") double applicationOfSoftwareEngineeringMethods,
                       @JsonProperty("useOfSoftwareTools") double useOfSoftwareTools,
                       @JsonProperty("requiredDevelopmentSchedule") double requiredDevelopmentSchedule) {
+        this.size=size;
         this.requiredSoftwareReliability = requiredSoftwareReliability;
         this.sizeofApplicationDatabase = sizeofApplicationDatabase;
         this.complexityofTheProduct = complexityofTheProduct;
         this.runtimePerformanceConstraints = runtimePerformanceConstraints;
-        this.remoryConstraints = remoryConstraints;
+        this.memoryConstraints = memoryConstraints;
         this.volatilityOfTheVirtualMachineEnvironment = volatilityOfTheVirtualMachineEnvironment;
         this.requiredTurnaboutTime = requiredTurnaboutTime;
         this.analystCapability = analystCapability;
@@ -88,5 +92,69 @@ public class CostDriver {
         this.applicationOfSoftwareEngineeringMethods = applicationOfSoftwareEngineeringMethods;
         this.useOfSoftwareTools = useOfSoftwareTools;
         this.requiredDevelopmentSchedule = requiredDevelopmentSchedule;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public double getRequiredSoftwareReliability() {
+        return requiredSoftwareReliability;
+    }
+
+    public double getSizeofApplicationDatabase() {
+        return sizeofApplicationDatabase;
+    }
+
+    public double getComplexityofTheProduct() {
+        return complexityofTheProduct;
+    }
+
+    public double getRuntimePerformanceConstraints() {
+        return runtimePerformanceConstraints;
+    }
+
+    public double getMemoryConstraints() {
+        return memoryConstraints;
+    }
+
+    public double getVolatilityOfTheVirtualMachineEnvironment() {
+        return volatilityOfTheVirtualMachineEnvironment;
+    }
+
+    public double getRequiredTurnaboutTime() {
+        return requiredTurnaboutTime;
+    }
+
+    public double getAnalystCapability() {
+        return analystCapability;
+    }
+
+    public double getApplicationsExperience() {
+        return applicationsExperience;
+    }
+
+    public double getSoftwareEngineerCapability() {
+        return softwareEngineerCapability;
+    }
+
+    public double getVirtualMachineExperience() {
+        return virtualMachineExperience;
+    }
+
+    public double getProgrammingLanguageExperience() {
+        return programmingLanguageExperience;
+    }
+
+    public double getApplicationOfSoftwareEngineeringMethods() {
+        return applicationOfSoftwareEngineeringMethods;
+    }
+
+    public double getUseOfSoftwareTools() {
+        return useOfSoftwareTools;
+    }
+
+    public double getRequiredDevelopmentSchedule() {
+        return requiredDevelopmentSchedule;
     }
 }

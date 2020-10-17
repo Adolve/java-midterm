@@ -1,5 +1,6 @@
 package com.example.midterm_java.api;
 
+import com.example.midterm_java.model.Cocomo;
 import com.example.midterm_java.model.CostDriver;
 import com.example.midterm_java.model.Person;
 import com.example.midterm_java.service.CocomoService;
@@ -26,8 +27,8 @@ public class CocomoController {
     }
 
     @PostMapping
-    public void addPerson( @Valid @RequestBody CostDriver cost) {
-        cocomoService.getValues(cost);
+    public Cocomo addPerson(@Valid @RequestBody CostDriver cost) {
+        return cocomoService.getValues(cost);
 
     }
 }
